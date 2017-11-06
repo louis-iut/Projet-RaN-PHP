@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Users\Repository;
+namespace App\Apples\Repository;
 
-use App\Users\Entity\User;
+use App\Apples\Entity\Apple;
 use Doctrine\DBAL\Connection;
 
 /**
- * User repository.
+ * Apple repository.
  */
-class UserRepository
+class AppleRepository
 {
     /**
      * @var \Doctrine\DBAL\Connection
@@ -21,65 +21,66 @@ class UserRepository
     }
 
    /**
-    * Returns a collection of users.
+    * Returns a collection of apples.
     *
     * @param int $limit
-    *   The number of users to return.
+    *   The number of apples to return.
     * @param int $offset
-    *   The number of users to skip.
+    *   The number of apples to skip.
     * @param array $orderBy
     *   Optionally, the order by info, in the $column => $direction format.
     *
-    * @return array A collection of users, keyed by user id.
+    * @return array A collection of apples, keyed by apple id.
     */
    public function getAll()
    {
        $queryBuilder = $this->db->createQueryBuilder();
        $queryBuilder
-           ->select('u.*')
-           ->from('users', 'u');
+           ->select('a.*')
+           ->from('apples', 'a');
 
        $statement = $queryBuilder->execute();
-       $usersData = $statement->fetchAll();
-       $userEntityList = array();
-       foreach ($usersData as $userData) {
-           $userEntityList[$userData['id']] = new User($userData['id'], $userData['nom'], $userData['prenom']);
+       $applesData = $statement->fetchAll();
+       $appleEntityList = array();
+       foreach ($applesData as $appleData) {
+           $appleEntityList[$appleData['id']] = new Apple($appleData['id'], $appleData['variety'], $appleData['price']);
        }
 
-       return $userEntityList;
+       return $appleEntityList;
    }
 
    /**
-    * Returns an User object.
+    * Returns an Apple object.
     *
     * @param $id
-    *   The id of the user to return.
+    *   The id of the apple to return.
     *
-    * @return array A collection of users, keyed by user id.
+    * @return array A collection of apples, keyed by apple id.
     */
    public function getById($id)
    {
        $queryBuilder = $this->db->createQueryBuilder();
        $queryBuilder
-           ->select('u.*')
-           ->from('users', 'u')
+           ->select('a.*')
+           ->from('apples', 'a')
            ->where('id = ?')
            ->setParameter(0, $id);
        $statement = $queryBuilder->execute();
-       $userData = $statement->fetchAll();
+       $appleData = $statement->fetchAll();
 
-       if(!empty($userData)) {
-           return new User($userData[0]['id'], $userData[0]['nom'], $userData[0]['prenom']);
+       if (!empty($appleData)) {
+           return new Apple($appleData[0]['id'], $appleData[0]['variety'], $appleData[0]['price']);
        }
 
        return null;
+
    }
 
     public function delete($id)
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
-          ->delete('users')
+          ->delete('apples')
           ->where('id = :id')
           ->setParameter(':id', $id);
 
@@ -90,20 +91,20 @@ class UserRepository
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
-          ->update('users')
+          ->update('apples')
           ->where('id = :id')
           ->setParameter(':id', $parameters['id']);
 
-        if ($parameters['nom']) {
+        if ($parameters['price']) {
             $queryBuilder
-              ->set('nom', ':nom')
-              ->setParameter(':nom', $parameters['nom']);
+              ->set('price', ':price')
+              ->setParameter(':price', $parameters['price']);
         }
 
-        if ($parameters['prenom']) {
+        if ($parameters['variety']) {
             $queryBuilder
-            ->set('prenom', ':prenom')
-            ->setParameter(':prenom', $parameters['prenom']);
+            ->set('variety', ':variety')
+            ->setParameter(':variety', $parameters['variety']);
         }
 
         $statement = $queryBuilder->execute();
@@ -113,17 +114,15 @@ class UserRepository
     {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
-          ->insert('users')
+          ->insert('apples')
           ->values(
               array(
-                'nom' => ':nom',
-                'prenom' => ':prenom',
+                'price' => ':price',
+                'variety' => ':variety',
               )
           )
-          ->setParameter(':nom', $parameters['nom'])
-          ->setParameter(':prenom', $parameters['prenom']);
+          ->setParameter(':price', $parameters['price'])
+          ->setParameter(':variety', $parameters['variety']);
         $statement = $queryBuilder->execute();
-
-        return $this->db->lastInsertId();
     }
 }

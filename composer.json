@@ -18,6 +18,19 @@
         "App\\Users\\Repository\\": "src/Users/Repository/",
         "App\\Users\\Entity\\": "src/Users/Entity/",
         "App\\Users\\Service\\": "src/Users/Service/",
+
+        "App\\Apples\\": "src/Apples/",
+        "App\\Apples\\Controller\\": "src/Apples/Controller/",
+        "App\\Apples\\Repository\\": "src/Apples/Repository/",
+        "App\\Apples\\Entity\\": "src/Apples/Entity/",
+        "App\\Apples\\Service\\": "src/Apples/Service/",
+
+        "App\\Associations\\": "src/Associations/",
+        "App\\Associations\\Controller\\": "src/Associations/Controller/",
+        "App\\Associations\\Repository\\": "src/Associations/Repository/",
+        "App\\Associations\\Entity\\": "src/Associations/Entity/",
+        "App\\Associations\\Service\\": "src/Associations/Service/",
+
         "App\\Tests\\": "tests/"
       }
   }

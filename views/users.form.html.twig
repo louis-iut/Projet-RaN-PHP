@@ -10,6 +10,7 @@
 
     <label for="name">Prénom : </label>
     <input type="text" name="prenom" value={{user.prenom}}  />
+
     {% else %}
 <form method="post" name="formulaire" action="{{ url('users.save') }}">
     <label for="name">Nom : </label>
@@ -17,6 +18,17 @@
 
     <label for="name">Prénom : </label>
     <input type="text" name="prenom" />
+
+    <label for="name">Attribuer une pomme : </label>
+    <select name="select_pomme">
+        <option>none</option>
+
+        {% for apple in apples %}
+            <option value={{apple.id}}> {{apple.id}} {{apple.variety}} </option>
+        {% endfor %}
+
+    </select>
+
     {% endif %}
 
     <button type="submit">Envoyer</button>

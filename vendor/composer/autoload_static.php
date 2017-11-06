@@ -46,6 +46,16 @@ class ComposerStaticInite5ffb52f950402fa96e8af1027ba01cb
             'App\\Users\\Controller\\' => 21,
             'App\\Users\\' => 10,
             'App\\Tests\\' => 10,
+            'App\\Associations\\Service\\' => 25,
+            'App\\Associations\\Repository\\' => 28,
+            'App\\Associations\\Entity\\' => 24,
+            'App\\Associations\\Controller\\' => 28,
+            'App\\Associations\\' => 17,
+            'App\\Apples\\Service\\' => 19,
+            'App\\Apples\\Repository\\' => 22,
+            'App\\Apples\\Entity\\' => 18,
+            'App\\Apples\\Controller\\' => 22,
+            'App\\Apples\\' => 11,
         ),
     );
 
@@ -133,6 +143,46 @@ class ComposerStaticInite5ffb52f950402fa96e8af1027ba01cb
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'App\\Associations\\Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Associations/Service',
+        ),
+        'App\\Associations\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Associations/Repository',
+        ),
+        'App\\Associations\\Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Associations/Entity',
+        ),
+        'App\\Associations\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Associations/Controller',
+        ),
+        'App\\Associations\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Associations',
+        ),
+        'App\\Apples\\Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Apples/Service',
+        ),
+        'App\\Apples\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Apples/Repository',
+        ),
+        'App\\Apples\\Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Apples/Entity',
+        ),
+        'App\\Apples\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Apples/Controller',
+        ),
+        'App\\Apples\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Apples',
         ),
     );
 

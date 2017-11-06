@@ -10,6 +10,8 @@ class User
 
     protected $prenom;
 
+    protected $apple;
+
     public function __construct($id, $nom, $prenom)
     {
         $this->id = $id;
@@ -32,17 +34,29 @@ class User
         $this->prenom = $prenom;
     }
 
+    public function setApple($apple)
+    {
+        $this->apple = $apple;
+    }
+
     public function getId()
     {
         return $this->id;
     }
+
     public function getPrenom()
     {
         return $this->prenom;
     }
+
     public function getNom()
     {
         return $this->nom;
+    }
+
+    public function getApple()
+    {
+        return $this->apple;
     }
 
     public function toArray()
@@ -51,6 +65,7 @@ class User
         $array['id'] = $this->id;
         $array['nom'] = $this->nom;
         $array['prenom'] = $this->prenom;
+        $array['apple'] = $this->apple;
 
         return $array;
     }

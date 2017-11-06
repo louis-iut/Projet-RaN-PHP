@@ -1,0 +1,23 @@
+<h2>Formulaire</h2>
+
+{% if apple is defined %}
+<form method="post" name="formulaire" action="{{ url('apples.save', {id: apple.id}) }}">
+
+    <input type="hidden" name="id" value={{apple.id}} />
+    <label for="name">Variété : </label>
+    <input type="text" name="variety" value={{apple.variety}}  />
+
+    <label for="name">Prix : </label>
+    <input type="text" name="price" value={{apple.price}} />
+    {% else %}
+<form method="post" name="formulaire" action="{{ url('apples.save') }}">
+    <label for="name">Variété : </label>
+    <input type="text" name="variety" />
+
+    <label for="name">Prix : </label>
+    <input type="text" name="price" />
+    {% endif %}
+
+    <button type="submit">Envoyer</button>
+
+</form>

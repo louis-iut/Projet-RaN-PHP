@@ -1,0 +1,37 @@
+<h1>Liste des pommes</h1>
+<form method="get" name="formulaire" action="{{ url('apples.new') }}">
+  <button type="submit">Ajouter</button>
+</form>
+<form method="get" name="formulaire" action="{{ url('users.list') }}">
+  <button type="submit">Utilisateurs</button>
+</form>
+
+<table>
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>VARIÉTÉ</th>
+    <th>PRIX</th>
+    <th>ACTION</th>
+  </tr>
+</thead>
+<tbdoy>
+{% for apple in apples %}
+   <tr>
+     <td>{{apple.id}}</td>
+     <td>{{apple.variety}}</td>
+     <td>{{apple.price}}</td>
+     <td>
+       <form method="post" name="formulaire" action="{{ url('apples.delete', {id: apple.id}) }}">
+            <button type="submit">Supprimer</button>
+        </form>
+      </td>
+      <td>
+        <form method="get" name="formulaire" action="{{ url('apples.edit', {id: apple.id}) }}">
+          <button type="submit">Modifier</button>
+        </form>
+      </td>
+   </tr>
+{% endfor %}
+</tbdoy>
+</table>
