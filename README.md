@@ -1,7 +1,16 @@
-#Initiation au PHP
+# Chemin d'accès :
+#### http://local/index.php/users/list où 'local' est une adresse de votre serveur apache
 
-##Présenatation du PHP
+# base de donnée
+## Créer une base de donnée avec les tables suivantes : 
 
-##Présentation du micro-framework Silex et de composer
+####Table : apples
+#####Columns : id, variety, price
 
-##Installation des différents composants à l'aide de composer
+####Table : users
+#####Columns : id, nom, prenom
+
+####Table : user_has_apple
+#####Columns : id, user_id, apple_id
+
+######Normalement ça devrait fonctionner 
