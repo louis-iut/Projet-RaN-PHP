@@ -4,13 +4,13 @@
 # base de donnée
 ## Créer une base de donnée avec les tables suivantes : 
 
-Table : apples
+Table : apples -->
 Columns : id, variety, price
 
-Table : users
+Table : users -->
 Columns : id, nom, prenom
 
-Table : user_has_apple
+Table : user_has_apple -->
 Columns : id, user_id, apple_id
 
-Normalement ça devrait fonctionner 
+Normalement ça devrait fonctionner ^o^
