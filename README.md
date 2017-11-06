@@ -5,12 +5,12 @@
 ## Créer une base de donnée avec les tables suivantes : 
 
 Table : apples -->
-Columns : id, variety, price
+Columns : (int)id, (varchar)variety, (float)price
 
 Table : users -->
-Columns : id, nom, prenom
+Columns : (int)id, (varchar)nom, (varchar)prenom
 
 Table : user_has_apple -->
-Columns : id, user_id, apple_id
+Columns : (int)id, (int)user_id, (int)apple_id
 
 Normalement ça devrait fonctionner ^o^
