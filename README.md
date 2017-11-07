@@ -2,7 +2,7 @@
 #### http://local/index.php/users/list où 'local' est une adresse de votre serveur apache
 
 # base de donnée
-## Créer une base de donnée avec les tables suivantes : 
+## Créer une base de donnée avec les tables suivantes (ou utiliser le fichier sql): 
 
 Table : apples -->
 Columns : (int)id, (varchar)variety, (float)price
